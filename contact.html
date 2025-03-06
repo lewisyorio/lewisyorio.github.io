@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--REQUIRED: head semantic element, 2/24/2025-->
+
+<head>
+    <meta charset="utf-8">
+    <!--REQUIRED: viewport metadata, 2-17-2025-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--REQUIRED: title metadata, 2-17-2025-->
+    <title>Lewis Yorio - Portfolio</title>
+    <!--REQUIRED: description metadata, 2-17-2025-->
+    <meta name="description"
+        content="Get in contact with Lewis to discuss potential creative projects.">
+    <!--REQUIRED: keywords metadata, 2-17-2025-->
+    <meta name="keywords" content="Lewis Yorio, Portfolio, Graphic Design, UX Design, Contact, Reach out, Communicate">
+    <!--REQUIRED: author metadata, 2-17-2025-->
+    <meta name="author" content="Lewis Yorio">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!--REQUIRED: body semantic element, 2/24/2025-->
+
+<body>
+    <header>
+        <div class="blur"></div>
+        <aside>
+            <!--REQUIRED: nav semantic element, 2/24/2025-->
+            <nav>
+                <div>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="portfolio.html">Work</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li class="currentpage"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+        <div></div>
+        <div class="heroimage">
+        </div>
+        <h1>
+            Have A Project in Mind?
+        </h1>
+    </header>
+    <!--REQUIRED: main semantic element, 2/24/2025-->
+    <main>
+        <h4 class="contactsubtext">
+            Reach out, Let's create. &darr;
+        </h4>
+        <div class="contact-spacer"></div>
+        
+        <!--I used Web3Forms' API to make my form functional https://web3forms.com/ -->
+        
+        <!--REQUIRED: form element, 3/3/2025-->
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="bf2b0fe9-5d41-4b52-8b87-c6c7858c73b3">
+            <!--REQUIRED: fieldset, 3/3/2025-->
+            <fieldset>
+                <!--REQUIRED: legend, 3/3/2025-->
+                <legend>Contact Lewis:</legend>
+                <!--REQUIRED: input element 1 of 3, 3/3/2025-->
+                <!--REQUIRED: required 3/4/2025-->
+                <input type="text" name="name" placeholder="* Name" required>
+                <!--REQUIRED: input element 2 of 3, 3/3/2025-->
+                <input type="email" name="email" placeholder="* Email" required>
+                <!--REQUIRED: input element 3 of 3, 3/3/2025-->
+                <input type="text" name="phone" placeholder="Phone">
+                <!--REQUIRED: select OR datalist option element 3/3/2025-->
+                <select id="Reference" name="Reference">
+                    <option value="" disabled selected>How'd you hear about me?</option>
+                    <option value="Google">Google</option>
+                    <option value="Bing">Bing</option>
+                    <option value="Facebook">Facebook</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="Word">Word of Mouth</option>
+                    <option value="Other">Other (please indicate below)</option>
+                </select>
+                <textarea name="message" placeholder="* Your message..." rows="10"></textarea>
+                <!-- Web3forms' Spam Protection -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            </fieldset>
+            <div>
+                <!--REQUIRED: submit button 3/3/2025-->
+                <button type="submit">Submit Form</button>
+                <!--REQUIRED: reset button 3/3/2025-->
+                <button class="reset-button" type="reset">Reset</button>
+            </div>
+            <div class="Iagree">
+                <!--REQUIRED: radio button OR checkbox 3/3/2025-->
+                <input type="checkbox" id="Agree" name="Agree" required>
+                <label for="Agree">I agree to share my provided information</label>
+            </div>
+            <p class="required-text">Required fields indicated by an asterisk(*)</p>
+        </form>
+
+    </main>
+    <!--REQUIRED: footer semantic element, 2/24/2025-->
+    <footer>
+        Copyright &copy; 2025 Lewis Yorio <br>
+
+    </footer>
+</body>
+
+</html>

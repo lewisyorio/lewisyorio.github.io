@@ -1,0 +1,880 @@
+/*Table of Contents*/
+
+/*1. Reset Styles*/
+/*2. Imported Global Fonts*/
+/*3. General Styling*/
+/*4. Home*/
+/*5. Work*/
+/*6. About*/
+/*7. Contact*/
+/*8. Media Queries*/
+
+
+
+
+/*1. Reset Styles*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/*Modern elements reset*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/*2. Global font imports*/
+
+@font-face {
+    font-family: "ModernWorld";
+    src: url("./Fonts/ModernWorld.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "HotelDeParisXe";
+    src: url("./Fonts/HotelDeParisXe-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "NeueMontreal";
+    src: url("./Fonts/NeueMontreal-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NeueMontreal";
+    src: url("./Fonts/NeueMontreal-Italic.otf") format("opentype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "NeueMontreal";
+    src: url("./Fonts/NeueMontreal-LightItalic.otf") format("opentype");
+    font-weight: 300;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: "NeueMontreal";
+    src: url("./Fonts/NeueMontreal-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "PPEditorial";
+    src: url("./Fonts/PPEditorialNew-UltralightItalic.otf") format("opentype");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "PPEditorial";
+    src: url("./Fonts/PPEditorialNew-Ultralight.otf") format("opentype");
+    font-style: normal;
+}
+
+
+/*3. General Styling*/
+
+/* root variables for styling consistency */
+:root {
+    --bg-color: #070707;
+    --text-color: white;
+    --accent-color: #8d69f8;
+    --spacing-sm: clamp(0.5rem, 2vw, 1rem);
+    --spacing-md: clamp(1rem, 4vw, 2rem);
+    --spacing-lg: clamp(2rem, 6vw, 4rem);
+}
+
+::selection {
+    background: var(--accent-color);
+    color: var(--bg-color)
+}
+
+html {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+}
+
+
+header {
+    width: 100%;
+    position: relative;
+    user-select: none;
+}
+
+.blur {
+    position: absolute;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 250%;
+    z-index: -1;
+    padding-bottom: 200px;
+    mask-image: linear-gradient(to left,
+            rgba(0, 0, 0) 12.5%,
+            rgba(0, 0, 0) 25%,
+            rgba(0, 0, 0, 1) 37.5%,
+            rgba(0, 0, 0, 0) 50%);
+}
+
+aside {
+    z-index: 1;
+    padding: var(--spacing-sm);
+/*REQUIRED: CSS float, 2/24/2025*/
+    float: right;
+}
+
+nav {
+    font-family: "PPEditorial", serif;
+    font-size: clamp(2rem, 6vmin, 5rem);
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--spacing-sm);
+    list-style: none;
+    padding-right: var(--spacing-md);
+    padding-top: 1vw;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--bg-color);
+    background-color: var(--accent-color);
+}
+
+.currentpage {
+    font-style: italic;
+}
+
+em {
+    font-style: italic
+}
+
+.heroimage {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50vh;
+    background-image: url("./Images/purple.png");
+    background-size: 75vmin;
+    background-position: top center;
+    background-repeat: no-repeat;
+    z-index: -2;
+    animation: slideDown 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+h1 {
+    font-family: "HotelDeParisXe", sans-serif;
+    font-size: 10vmax;
+    margin: 0;
+    padding-left: 3vmax;
+    max-width: 70%;
+    line-height: 0.75em;
+    padding-top: 20px;
+}
+
+h2 {
+    font-size: 2vmax;
+    padding-top: 10px;
+    padding-right: 2VW;
+    font-family: "PPEditorial";
+}
+
+h3 {
+    font-family: "PPEditorial";
+    font-style: italic;
+    font-weight: 300;
+    font-size: 30px;
+    padding-top: 4px;
+    padding-bottom: 20px;
+}
+
+.paragraph-container {
+    flex: 1;
+    display: flex;
+    margin-top: 30px;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+
+}
+
+p {
+    font-family: "NeueMontreal", sans-serif;
+    font-size: 3.5vmin;
+    max-width: 70ch;
+    margin-bottom: var(--spacing-lg);
+}
+
+.p2 {
+    font-size: 20px;
+    margin-bottom: var(--spacing-sm);
+}
+
+blockquote {
+    font-family: "NeueMontreal", sans-serif;
+    max-width: 70ch;
+    font-weight: 300;
+    font-size: 3.5vmin;
+    margin-bottom: var(--spacing-md);
+}
+
+h4 {
+    font-family: "NeueMontreal", sans-serif;
+    font-size: clamp(1.2rem, 4vmin, 10rem);
+    margin-bottom: var(--spacing-md);
+    padding-left: 3vmax;
+
+}
+
+footer {
+    padding: var(--spacing-md);
+    text-align: center;
+    font-family: "NeueMontreal", sans-serif;
+    font-size: clamp(0.5rem, 3vmin, 1.1rem);
+}
+
+
+
+
+/*hero animation*/
+@keyframes slideDown {
+    from {
+        transform: translateY(-200px) scale(0.6);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/*4. Home Elements*/
+.hero-text {
+    font-family: "ModernWorld", sans-serif;
+    font-size: clamp(10vw, 25vmin, 20vw);
+    padding-top: 5vh;
+    padding-bottom: 200px;
+
+}
+
+.home-p-container {
+    flex: 1;
+    display: flex;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+    margin-right: 20%;
+}
+
+.home-p {
+    font-size: 4vmin;
+
+}
+
+.roundedimage {
+    border-radius: 15px;
+}
+
+.recent-work-container {
+    width: 80%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.columns {
+    column-count: 2;
+}
+
+
+.portfoliocontent {
+
+    color: var(--text-color);
+    background: linear-gradient(90deg, #121212, #292929);
+    padding: 20px;
+    border-radius: 15px;
+    border: 0px solid;
+    margin-bottom: 1.5vw;
+    display: inline-block;
+    transition: all 0.02s ease;
+}
+
+/*REQUIRED: border, 2/24/2025*/
+.portfoliocontent:hover {
+    border: 3px solid;
+    border-color: var(--accent-color);
+}
+
+
+
+/*5. Work/Portfolio*/
+
+.fullportfoliocontent {
+    background: linear-gradient(90deg, #121212, #292929);
+    padding: 20px;
+    border-radius: 15px;
+    border: 0px solid;
+    margin-bottom: 1.5vw;
+    display: inline-block;
+    transition: all 0.02s ease;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.fullportfoliocontent:hover {
+    border: 3px solid;
+    border-color: var(--accent-color);
+    cursor: pointer;
+}
+
+h5 {
+    font-family: "PPEditorial";
+    color: white;
+    font-style: italic;
+    font-size: 7vmin;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: var(--bg-color);
+    border-radius: 1vw;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    margin-top: -15px;
+}
+
+.columns3 {
+    column-count: 3;
+}
+
+.full-work-container {
+    width: 80%;
+    margin: auto;
+    text-decoration: none;
+}
+
+.modal {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+
+.modalimg {
+    display: block;
+    margin: auto;
+    justify-content: center;
+    max-height: 70vh;
+
+    height: auto;
+    border-radius: 1vw;
+    margin-bottom: 1vw;
+}
+
+figcaption {
+    font-family: "NeueMontreal", sans-serif;
+    font-size: 3.5vmin;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    display: block;
+    margin: auto;
+    text-align: center;
+    background-color: var(--bg-color);
+    color: white;
+    border-radius: 1vw;
+    max-width: 95%;
+}
+
+.close {
+    position: absolute;
+    top: 1vw;
+    right: 4vw;
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: #ccc;
+}
+
+.close:hover {
+    color: var(--accent-color);
+}
+
+.modal:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.audiocontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+audio {
+    padding: 2vw;
+    border-radius: 1vw;
+    background-color: #dddddd;
+    filter: invert() saturate(0);
+
+}
+
+.portfoliosub {
+    padding-left: 5%;
+
+}
+
+.hr-shortened {
+    max-width: 90%;
+    margin: auto;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+}
+
+.centered {
+    padding-top: 3vh;
+    text-align: center;
+    margin: auto;
+    max-width: 60%;
+    margin-bottom: 20vh;
+}
+
+
+/*6. About*/
+
+.about-paragraph-container {
+    flex: 1;
+    display: flex;
+    gap: var(--spacing-md);
+    padding-left: var(--spacing-md);
+    margin-right: var(--spacing-md)
+}
+
+.fullwidth {
+    max-width: 1000ch;
+}
+
+.spacer {
+    height: 140px;
+}
+
+.sub {
+    margin-top: 5vw;
+    font-size: 50px;
+    padding-bottom: 5vw;
+}
+
+.aboutme {
+    font-family: "PPEditorial";
+    font-weight: 300;
+    font-size: 3vmin;
+    padding-top: 4px;
+    padding-bottom: 40px;
+    margin-left: 10vw;
+}
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 5vw;
+    border-radius: 6px;
+}
+
+th,
+td {
+    padding: 12px;
+    border: none;
+    font-family: "NeueMontreal";
+    font-size: 3vmin;
+}
+
+th {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    font-family: "NeueMontreal";
+
+}
+
+
+tr:nth-child(odd) {
+    background-color: #171717;
+    ;
+}
+
+th:first-of-type {
+    border-top-left-radius: 10px;
+}
+
+th:last-of-type {
+    border-top-right-radius: 10px;
+
+}
+
+tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 10px;
+}
+
+tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 10px;
+}
+
+
+/*7. Contact*/
+
+.contact-spacer {
+    height: 6.5vmin;
+}
+
+.contactsubtext {
+    font-size: 4em;
+    padding-top: 2vw;
+}
+
+.contact-form {
+    margin: 0 auto;
+    outline: 2px solid var(--accent-color);
+    padding: 2vw;
+    border-radius: 15px;
+    margin-bottom: 2px;
+    max-width: 50%;
+    background-color: var(--bg-color);
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+legend {
+    margin-top: 1vw;
+    font-size: 20px;
+    color: var(--accent-color);
+    font-family: "NeueMontreal";
+    font-style: italic;
+    padding-bottom: 10px;
+}
+
+input,
+select,
+textarea {
+    color: var(--text-color);
+    padding: 20px;
+    background-color: var(--bg-color);
+    border: 3px solid #282828;
+    border-radius: 15px;
+    color: white;
+    font-family: "NeueMontreal";
+    font-size: 20px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: "NeueMontreal";
+    font-size: 20px;
+    margin-top: 20px;
+    margin-right: 5px;
+}
+
+.reset-button {
+    background-color: var(--bg-color);
+    border: 1px solid #333;
+}
+
+button:hover {
+    background-color: #9f84f7;
+}
+
+.reset-button:hover {
+    background-color: rgb(33, 33, 33);
+}
+
+.Iagree {
+    font-family: "NeueMontreal";
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.required-text {
+    margin-top: 1vw;
+    font-size: 20px;
+    color: var(--accent-color);
+    text-decoration: wavy underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 10px;
+    padding-bottom: 2vw;
+}
+
+/*8. Media Queries*/
+
+/*REQUIRED: media query 1 of 3, 2/24/2025*/
+@media (max-width: 1500px) {
+
+    /*global responsive media*/
+
+    /*none*/
+
+    /*home specific responsive media*/
+    .home-p-container {
+        padding-top: 0px;
+        display: block;
+        padding-left: 4vw;
+        padding-right: 150px;
+    }
+
+    .home-p {
+        padding-top: 20px;
+
+    }
+
+    .hero-text {
+        padding-bottom: 120px;
+    }
+
+    /*contact specific responsive media*/
+    .contactsubtext {
+        font-size: 3em;
+    }
+
+    .contact-form {
+        max-width: 70%;
+    }
+
+    /*portfolio specific responsive media*/
+
+    .modalimg {
+        margin-top: 5vmin;
+        margin-bottom: 20px;
+    }
+
+
+
+}
+
+/*REQUIRED: media query 2 of 3, 2/24/2025*/
+@media (max-width: 800px) {
+
+    /*global responive media*/
+    aside {
+        width: 100%;
+        padding: var(--spacing-sm);
+    }
+
+    .nav-spacer {
+        height: 12vmin;
+    }
+
+    h1 {
+        font-size: 9vmax;
+    }
+
+    /*REQUIRED: dynamic styling of navigation, 2/24/2025*/
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8vmin;
+        padding: 0;
+        font-size: 5vmin;
+    }
+
+    .blur {
+        position: absolute;
+        backdrop-filter: blur(10px);
+        height: 10%;
+        mask-image: linear-gradient(to bottom,
+                rgba(0, 0, 0) 12.5%,
+                rgba(0, 0, 0) 25%,
+                rgba(0, 0, 0, 0) 37.5%,
+                rgba(0, 0, 0, 0) 50%);
+    }
+
+    blockquote {
+        font-size: 4vmin;
+
+    }
+
+    /*home specific responsive media*/
+    .columns {
+        column-count: 1;
+    }
+
+    .hero-text {
+        padding-top: 0;
+        font-size: 25vmin;
+        padding-left: 6vw;
+        padding-bottom: 20px;
+
+    }
+
+    .home-p-container {
+        padding-right: 0px;
+    }
+
+    .home-p {
+        font-size: 5vmin;
+
+    }
+
+    /*contact specific responsive media*/
+    .contactsubtext {
+        font-size: 2em;
+    }
+
+    .contact-form {
+        max-width: 85%;
+    }
+
+    .required-text {
+        padding-bottom: 20px;
+        font-size: 15px;
+    }
+
+    /*about page specific responsive media*/
+
+    .spacer {
+        height: 0px;
+    }
+
+    /*portfolio specific responsive media*/
+    .modalimg {
+
+        max-width: 90vw;
+        margin-bottom: 20px;
+    }
+
+    h5 {
+        font-size: 7vmin;
+        margin-bottom: 7vw;
+    }
+
+    .columns3 {
+        column-count: 1;
+    }
+
+
+}
+
+/*REQUIRED: media query 3 of 3, 2/24/2025*/
+/*mobile*/
+@media (max-width: 500px) {
+    
+    /*global responsive media*/
+    h1 {
+        font-size: 8vmax;
+    }
+
+    .nav-spacer {
+        height: 55vmin;
+    }
+
+    nav ul {
+        font-size: 6vmin;
+    }
+
+    .blur {
+
+        backdrop-filter: blur(5px);
+    }
+
+    blockquote {
+        font-size: 6.5vmin;
+
+    }
+
+    /*home specific responsive media*/
+    .home-p {
+        font-size: 7.5vmin;
+    }
+
+    /*contact specific responsive media*/
+    .contactsubtext {
+        font-size: 25px;
+        margin-top: 4vw;
+
+    }
+
+    /*portfolio specific responsive media*/
+
+    .modalimg {
+        margin-bottom: 8vmin;
+    }
+
+    h5 {
+        font-size: 8.5vmin;
+        margin-bottom: 7vw;
+    }
+
+}

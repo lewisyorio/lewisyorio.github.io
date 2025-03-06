@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--REQUIRED: head semantic element, 2/24/2025-->
+
+<head>
+    <meta charset="utf-8">
+    <!--REQUIRED: viewport metadata, 2-17-2025-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--REQUIRED: title metadata, 2-17-2025-->
+    <title>Lewis Yorio - Portfolio</title>
+    <!--REQUIRED: description metadata, 2-17-2025-->
+    <meta name="description" content="Take a closer look at Lewis' creative projects.">
+    <!--REQUIRED: keywords metadata, 2-17-2025-->
+    <meta name="keywords" content="Lewis Yorio, Portfolio, Projects, Designs, Graphic Design, UX Design">
+    <!--REQUIRED: author metadata, 2-17-2025-->
+    <meta name="author" content="Lewis Yorio">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!--REQUIRED: body semantic element, 2/24/2025-->
+
+<body>
+    <header>
+        <div class="blur"></div>
+        <aside>
+            <!--REQUIRED: nav semantic element, 2/24/2025-->
+            <nav>
+                <div>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="currentpage"><a href="portfolio.html">Work</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+        <div class="heroimage">
+        </div>
+        <h1>
+            Portfolio
+        </h1>
+    </header>
+    <!--REQUIRED: main semantic element, 2/24/2025-->
+    <main>
+
+        <div class="paragraph-container">
+            <hr>
+            <p>
+                This portfolio showcases my visual artistry alongside a sample of my musical work. Whether through design or sound, my goal is to craft impactful pieces that resonate.
+            </p>
+            <hr>
+        </div>
+
+        <div class="full-work-container">
+            <h3>Click to expand:</h3>
+            <div class="columns3">
+                <div class="fullportfoliocontent">
+                    <a href="#fantamodal">
+                        <!--Repeated Image-->
+                        <img src="./Images/Fanta.png" alt="Personal Art Piece Entitled 'Fanta'"
+                            style="width:100%" class="roundedImage">
+                        <h3>"Fanta"</h3>
+                    </a>
+                </div>
+            
+                <div class="fullportfoliocontent">
+                    <a href="#redlinemodal">
+                        <!--Repeated Image-->
+                        <img src="./Images/aroundtheworld.png" alt="Personal Art Piece Entitled 'Redline'"
+                            style="width:100%" class="roundedimage">
+                        <h3>"Redline"</h3>
+                    </a>
+                </div>
+    
+                <div class="fullportfoliocontent">
+                    <a href="#sagmobmodal">
+                        <!--REQUIRED: image 5 of 5, 2/24/2025-->
+                        <img src="./Images/SagMob.png" alt="Back Cover Design for Saguaro Mob Volume 1"
+                            style="width:100%" class="roundedimage">
+                        <h3>"Saguaro Mob" &mdash; Cover</h3>
+                    </a>
+                </div>
+                <div class="fullportfoliocontent">
+                    <a href="#tracklistmodal">
+                        <!--Extra Image-->
+                        <img src="./Images/BackCover.png" alt="Back Cover Design for Saguaro Mob Volume 1"
+                            style="width:100%" class="roundedimage">
+                        <h3>"Saguaro Mob" &mdash; Tracklist</h3>
+                    </a>
+                </div>
+
+                <div class="fullportfoliocontent">
+                    <a href="#monochromemodal">
+                        <!-- Repeated Image-->
+                        <img src="./Images/monochrome.jpg" alt="Personal Art Piece Titled: Monochrome Warp"
+                            style="width:100%" class="roundedimage">
+                        <h3>"Monochrome Warp"</h3>
+                    </a>
+                </div>
+
+                <div class="fullportfoliocontent">
+                    <a href="#shortfuzemodal">
+                        <!-- Repeated Image-->
+                        <img src="./Images/ShortFuze.png" alt="Personal Art Piece Titled: Monochrome Warp"
+                            style="width:100%" class="roundedimage">
+                        <h3>"They Call Me Short Fuze" &mdash; Album</h3>
+                    </a>
+                </div>
+
+
+
+                <!--image modals-->
+
+                <div id="fantamodal" class="modal">
+                    <a href="#" class="close">&times;</a>
+                    <!--REQUIRED: figure/figcaption, 3/5/2025-->
+                    <figure>
+                        <h5>Fanta</h5>
+                        <img class="modalimg" src="./Images/Fanta.png" alt="Modal of ">
+                        <figcaption>
+                            A personal project designed in 2025 using Adobe Illustrator.
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div id="redlinemodal" class="modal">
+                    <a href="#" class="close">&times;</a>
+                    <figure>
+                        <h5>Redline</h5>
+                        <img class="modalimg" src="./Images/aroundtheworld.png" alt="Modal of Redline Art Piece">
+                        <figcaption>
+                            A personal project design class project reimagined in a digital medium. 
+                            Created in 2025 using Adobe Illustrator.
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div id="sagmobmodal" class="modal">
+                    <a href="#" class="close">&times;</a>
+                    <figure>
+                        <h5>Saguaro Mob Cover</h5>
+                        <img class="modalimg" src="./Images/SagMob.png" alt="Modal of Saguaro Mob Cover">
+                        <figcaption>
+                            Freelance album design project. 
+                            Created in 2024 using Adobe Photoshop.
+                        </figcaption>
+                    </figure>
+                </div>
+
+
+                <div id="tracklistmodal" class="modal">
+                    <a href="#" class="close">&times;</a>
+                    <figure>
+                        <h5>Saguaro Mob Tracklist</h5>
+                        <img class="modalimg" src="./Images/BackCover.png" alt="Modal of ">
+                        <figcaption>
+                            Freelance album design project. 
+                            Created in 2024 using Adobe Photoshop.
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div id="monochromemodal" class="modal">
+                    <a href="#" class="close">&times;</a>
+                    <figure>
+                        <h5>Monochrome Warp</h5>
+                        <img class="modalimg" src="./Images/monochrome.jpg" alt="Modal of ">
+                        <figcaption>
+                            14"x 17"; Marker on Bristol Board. 2D Design Class Project.
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div id="shortfuzemodal" class="modal">
+                    <a href="#" class="close">&times;</a>
+                    <figure>
+                        <h5>"They Call Me Short Fuze"</h5>
+                        <img class="modalimg" src="./Images/ShortFuze.png" alt="Modal of Saguaro Mob Cover">
+                        <figcaption>
+                            Freelance album design project. 
+                            Created in 2025 using Adobe Photoshop.
+                        </figcaption>
+                    </figure>
+                </div>
+
+
+            </div>
+        </div>
+        <hr class="hr-shortened">
+        <h4 class="portfoliosub">
+        Listen to a sample of my music below:
+        </h4>
+        <div class=audiocontainer>
+            <!--REQUIRED: video OR audio,3/5/2025-->
+            <audio controls>
+                <source src="./Audio/summernights.wav" type="audio/wav">
+                <a href="./Audio/summernights.wav">Download the Song</a> (Wav)
+            </audio>
+        </div>
+        
+        <h3 class="centered"> Summer Nights (Instrumental)</h3>
+    </main>
+    <!--REQUIRED: footer semantic element, 2/24/2025-->
+    <footer>
+        Copyright &copy; 2025 Lewis Yorio <br>
+    </footer>
+</body>
+
+</html>
